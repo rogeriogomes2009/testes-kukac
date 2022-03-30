@@ -6,14 +6,14 @@ const MotoControle = require("./app/controladores/MotoControle.js");
 const CarControle = require("./app/controladores/CarControle.js");
 const CepControle = require("./app/controladores/CepControle.js");
 
-const roteador = Router();
+const routes = Router();
 
-roteador.get("/palind", PalindControle.show);
-roteador.get("/compras", PurchControle.show);
-roteador.post("/moto", MotoControle.store);
-roteador.get("/moto", MotoControle.show);
-roteador.post("/carro", CarControle.store);
-roteador.get("/carro", CarControle.show);
-roteador.post("/ceps", CepControle.show);
+routes.get("/palind", PalindControle.show);
+routes.get("/compras", PurchControle.show);
+routes.post("/moto", MotoControle.store);
+routes.get("/moto", MotoControle.show);
+routes.post("/carro", CarControle.store);
+routes.get("/carro", CarControle.show);
+routes.post("/ceps", CepControle.show);
 
-module.exports = roteador;
+module.exports = routes;
