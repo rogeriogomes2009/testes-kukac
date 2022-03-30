@@ -4,7 +4,7 @@
   --primary-dark: #981ee4;
   --background: #979797;
   --background-box: #4c4c4d;
-  --support: #f0ec16;
+  --support: #30302c;
   --black: #09090a;
   --text: #f8f7a7;
   --btn-primary: #ffffff;
@@ -35,6 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
+  background-image: url(../public/back.png);
   color: var(--text);
   overflow-x: hidden;
 }
