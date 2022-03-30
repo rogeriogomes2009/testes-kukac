@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
-import { FaArrowCircleUp } from 'react-icons/fa';
-import './style.scss';
+import React, { useState } from 'react'
+import { FaArrowCircleUp } from 'react-icons/fa'
+import './styles.scss'
 
 const ScrollButton = () => {
-  const [visible, setVisible] = useState(false);
+  const [visivel, setVisivel] = useState(false)
 
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
+  const toggleVisivel = () => {
+    const scrolled = document.documentElement.scrollTop
     if (scrolled > 300) {
-      return setVisible(true);
+      return setVisivel(true)
     }
-    return setVisible(false);
-  };
+    return setVisivel(false)
+  }
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
-    });
-  };
+    })
+  }
 
-  window.addEventListener('scroll', toggleVisible);
+  window.addEventListener('scroll', toggleVisivel)
 
   return (
     <button className='buttonToTop'>
       <FaArrowCircleUp
         onClick={scrollToTop}
-        style={{ display: visible ? 'inline' : 'none' }}
+        style={{ display: visivel ? 'inline' : 'none' }}
       />
     </button>
-  );
-};
+  )
+}
 
-export default ScrollButton;
+export default ScrollButton

@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import Cep from './Cep';
-import api from '../../services/api';
+import api from '../../servicos/api';
 import Swal from 'sweetalert2';
 
 const Ceps = () => {
-  const [cepsList, setCepsList] = useState([]);
+  const [ListaDeCeps, setListaDeCeps] = useState([]);
 
   const cepsId = ['primeirocep', 'segundocep', 'terceirocep', 'quartocep', 'quintocep'];
 
-  const handleInput = (value) => {
+  const inputManual = (value) => {
     value.target.value = value.target.value.replace(/[^0-9]/g, '');
   };
 
-  const handleSubmit = async ({ cep_1, cep_2, cep_3, cep_4, cep_5 }) => {
+  const submitManual = async ({ cep_1, cep_2, cep_3, cep_4, cep_5 }) => {
     const ceps = [cep_1, cep_2, cep_3, cep_4, cep_5];
 
     if (ceps.includes('', "", null, undefined)) {
       Swal.fire({
-        title: 'Oops...',
-        text: 'Você precisa informar 5 CEPs',
+        title: 'Falha...',
+        text: 'Favor informar 5 CEPs',
         icon: 'error',
         confirmButtonText: 'Ok'
       });
@@ -30,7 +30,7 @@ const Ceps = () => {
     if (!ceps.filter(cep => cep.length !== 8)) {
       Swal.fire({
         title: 'CEP inválido',
-        text: 'Os CEPs devem conter 8 números',
+        text: 'Os CEPs devem conter 8 digitos',
         icon: 'error',
         confirmButtonText: 'Ok'
       });
@@ -48,7 +48,7 @@ const Ceps = () => {
         ]
       });
 
-      setCepsList(data);
+      setListaDeCeps(data);
     } catch ({ response }) {
       Swal.fire({
         icon: 'error',
@@ -63,10 +63,10 @@ const Ceps = () => {
       <div className="container background-container mt-5" >
         <h5 className='text-center mb-5'>Busca de CEPs</h5>
         <div>
-          <Formik onSubmit={handleSubmit} initialValues={{ cep_1: '', cep_2: '', cep_3: '', cep_4: '', cep_5: '' }}>
+          <Formik onSubmit={submitManual} initialValues={{ cep_1: '', cep_2: '', cep_3: '', cep_4: '', cep_5: '' }}>
             <Form className="container d-flex flex-column align-items-center gap-3">
-              <h5>Digite os CEPs:</h5>
-              <p>Informe os cinco CEPs que deverão ser consultados e aguarde aparecer o botão informativo ao lado direito da coluna.</p>
+              <h5>Digite os CEPs aqui:</h5>
+              <p>Favor informar os cinco CEPs que serão consultados e aguarde a informação de resposta.</p>
               <div className='container d-flex'>
                 <div className=" container d-flex flex-column align-items-center justify-content-center gap-3">
                   <div className='container d-flex flex-wrap justify-content-center align-items-center gap-1'>
@@ -80,7 +80,7 @@ const Ceps = () => {
                       autoComplete='off'
                       minLength='8'
                       maxLength='8'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
                   </div>
                   <div className='container d-flex flex-wrap justify-content-center align-items-center gap-1'>
@@ -94,7 +94,7 @@ const Ceps = () => {
                       autoComplete='off'
                       minLength='8'
                       maxLength='8'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
                   </div>
                   <div className='container d-flex flex-wrap justify-content-center align-items-center gap-1'>
@@ -108,7 +108,7 @@ const Ceps = () => {
                       autoComplete='off'
                       minLength='8'
                       maxLength='8'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
                   </div>
                   <div className='container d-flex flex-wrap justify-content-center align-items-center gap-1'>
@@ -122,7 +122,7 @@ const Ceps = () => {
                       autoComplete='off'
                       minLength='8'
                       maxLength='8'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
                   </div>
                   <div className='container d-flex flex-wrap justify-content-center align-items-center gap-1'>
@@ -136,7 +136,7 @@ const Ceps = () => {
                       autoComplete='off'
                       minLength='8'
                       maxLength='8'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
                   </div>
                   <div className="container d-flex justify-content-center align-items-center gap-3">
@@ -149,7 +149,7 @@ const Ceps = () => {
           <div className='container'>
             <div className="box-numbers p-3">
               <div data-js='ceps' className="numbers container d-flex flex-wrap gap-3 justify-content-center align-items-center col-12 my-4">
-                {!!cepsList && cepsList?.map(({ uf, logradouro, bairro, localidade }, idx) => {
+                {!!ListaDeCeps && ListaDeCeps?.map(({ uf, logradouro, bairro, localidade }, idx) => {
                   return (
                     <Cep
                       key={idx}

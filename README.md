@@ -97,73 +97,62 @@ _________
 ## Como startar o app
 
     # Clone esse repositório
-    $ git clone https://github.com/eduardoaraujogomes/kukac-challenge.git
+    $ git clone https://github.com/rogeriogomes2009/testes-kukac.git
     
     # Entrando na pasta do projeto
-    $ cd kukac-challenge
+    $ cd testes-kukac
     
-    # Instalando o frontend
+    # Iniciando o frontend
     $ cd frontend
     
-    # Instalar dependências
+    # Instalando dependências
     $ yarn ou npm i 
     
-    # Executar
+    # Executando
     $ yarn start ou npm start
     
-    # Agora é só abrir o browser da sua escolha e digitar
-    http://localhost:3000/
+    # Abra o browser de sua preferência e digite http://localhost:3001/
     
     # Instalando o backend
     $ cd backend
     
-    # Instalar dependências
+    # Instalando dependências
     $ yarn ou npm i 
     
-    # Executar
+    # Executando
     $ yarn server ou npm run server
     
     
-    # Rodando os testes
+    # Realizando os testes
     $ yarn test ou npm run test
     
-    # Verificando a Cobertura dos testes
+    # Avaliando o poder de cobertura dos testes
     $ yarn coverage ou npm run coverage
     
-    # Rodando testes automatizados
+    # Startando testes automatizados
     $ yarn testWatch ou npm run testWatch
     
-   
-    
-    
-
 _________
 
 
+Desafio realizado por ***Rogério Gomes - rogerio.gomes2009@gmail.com***
 
-
-
-Feito com 💙 por **Eduardo de Araújo** 👻.
-
-
-[HTML5]: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
-[Sass]: https://sass-lang.com/ 
- 
-[JavaScript]: https://www.javascript.com/  
-[TypeScript]: https://www.typescriptlang.org/
 
 [Axios]: https://axios-http.com/docs/intro
-[ReactJS]: https://reactjs.org/
-[yarn]: https://yarnpkg.com/
-[formik]: https://formik.org/
-[editorconfig]: https://editorconfig.org/
-[sweetalert2]: https://sweetalert2.github.io/
-[Express]: https://expressjs.com/
-[Nodemon]: https://www.npmjs.com/package/nodemon
 [cors]: https://www.npmjs.com/package/cors
+[editorconfig]: https://editorconfig.org/
+[Express]: https://expressjs.com/
 [express-async-erros]: https://www.npmjs.com/package/express-async-errors
-[Insomnia]: https://insomnia.rest/
+[formik]: https://formik.org/
+[HTML5]: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+[JavaScript]: https://www.javascript.com/  
 [Jester]: https://jestjs.io/
-
+[Nodemon]: https://www.npmjs.com/package/nodemon
+[Postman]: https://www.postman.com/
+[ReactJS]: https://reactjs.org/
+[Sass]: https://sass-lang.com/ 
+[sweetalert2]: https://sweetalert2.github.io/
+[TypeScript]: https://www.typescriptlang.org/
+[yarn]: https://yarnpkg.com/
 
 [Visual Studio Code]: https://code.visualstudio.com/ 

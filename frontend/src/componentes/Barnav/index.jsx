@@ -18,7 +18,7 @@ function Navbar() {
           <nav className='navbar navbar-expand-lg '>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <a className='navbar-brand playground' href='index.html'>
-                <h3>Playground Kukac</h3>
+                <h3>Tela Inicial - KUKAC</h3>
               </a>
             </Link>
             <button
@@ -43,7 +43,7 @@ function Navbar() {
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#about'
+                      href='#sobre'
                     >
                       Palíndromo
                     </a>
@@ -54,18 +54,18 @@ function Navbar() {
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#technologies'
+                      href='#tecnologias'
                     >
                       Compras
                     </a>
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link to='/vehicles' style={{ textDecoration: 'none' }}>
+                  <Link to='/veiculo' style={{ textDecoration: 'none' }}>
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#projects'
+                      href='#projetos'
                     >
                       Veículos
                     </a>
@@ -76,7 +76,7 @@ function Navbar() {
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#contact'
+                      href='#contato'
                     >
                       CEP's
                     </a>

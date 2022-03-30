@@ -1,5 +1,5 @@
 export const Svg = ({ svgVal }) => {
-  return <>{svgVal}</>;
-};
+  return <>{svgVal}</>
+}
 
-export default Svg;
+export default Svg

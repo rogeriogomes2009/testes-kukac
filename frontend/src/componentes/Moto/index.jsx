@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Field, Formik, Form } from 'formik';
-import api from '../../services/api';
-import './style.scss';
-import Swal from 'sweetalert2';
+import React, { useState, useEffect } from 'react'
+import { Field, Formik, Form } from 'formik'
+import api from '../../servicos/api'
+import './styles.scss'
+import Swal from 'sweetalert2'
 
-const Motocyle = () => {
-  const [motocyclesList, setMotocyclesList] = useState([]);
+const Moto = () => {
+  const [listaMotocicletas, setListaMotocicletas] = useState([])
 
-  const handleInput = (value) => {
-    value.target.value = value.target.value.replace(/[^0-9]/g, '');
-  };
+  const inputManual = (value) => {
+    value.target.value = value.target.value.replace(/[^0-9]/g, '')
+  }
 
 
-  const cleanTable = () => {
-    const motocycle = document.querySelector('[data-js="motocycle"]');
+  const limparTabela = () => {
+    const motocycle = document.querySelector('[data-js="motocycle"]')
     if (!!motocycle.innerHTML) {
       motocycle.innerHTML = `
            <thead>
@@ -25,48 +25,48 @@ const Motocyle = () => {
                 <th>Quantidade de Rodas</th>
               </tr>
             </thead>
-            `;
+            `
     }
-  };
+  }
 
 
 
-  const firstRender = async () => {
+  const renderInicial = async () => {
     try {
-      const response = await api.get(`/motocycle`);
-      setMotocyclesList(response.data);
+      const response = await api.get(`/motocycle`)
+      setListaMotocicletas(response.data)
     } catch (error) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Não foi possível carregar os dados das motos',
         confirmButtonText: 'Ok'
-      });
+      })
     }
-  };
+  }
 
-  const handleSubmit = async ({ modelInfo, yearInfo, brandInfo, passengersInfo }) => {
+  const submitManual = async ({ modeloInfo, anoInfo, marcaInfo, passageirosInfo }) => {
     try {
-      const response = await api.post(`/motocycle`, {
-        model: modelInfo,
-        year: +yearInfo,
-        brand: brandInfo,
-        passenger: +passengersInfo
+      const response = await api.post(`/moto`, {
+        modelo: modeloInfo,
+        ano: +anoInfo,
+        marca: marcaInfo,
+        passageiros: +passageirosInfo
       });
-      setMotocyclesList(response.data);
+      setListaMotocicletas(response.data)
     } catch ({ response }) {
       Swal.fire({
         icon: 'error',
-        title: 'Oops...',
+        title: 'Falha...',
         text: `${response.data.error}`,
         confirmButtonText: 'Ok'
-      });
+      })
     }
-  };
+  }
 
   useEffect(() => {
-    cleanTable();
-    firstRender();
+    limparTabela();
+    renderInicial();
   }, []);
 
   return (
@@ -79,49 +79,49 @@ const Motocyle = () => {
               <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <Formik onSubmit={handleSubmit} initialValues={{ modelInfo: '', yearInfo: '', brandInfo: '', passengersInfo: '' }} >
+              <Formik onSubmit={submitManual} initialValues={{ modeloInfo: '', anoInfo: '', marcaInfo: '', passageirosInfo: '' }} >
                 <Form className="container d-flex flex-column align-items-center gap-3">
                   <div className="d-flex flex-wrap align-items-center justify-content-center gap-3">
                     <label className='col-4' htmlFor="modelInfo">Modelo</label>
                     <Field
                       className='values col-4 p-3'
-                      name='modelInfo'
+                      name='modeloInfo'
                       required-type='text'
-                      id='modelInfo'
+                      id='modeloInfo'
                       autoComplete='off'
                     />
-                    <label htmlFor="yearInfo" className='col-4'>Ano de fabricação</label>
+                    <label htmlFor="anoInfo" className='col-4'>Ano de fabricação</label>
                     <Field
                       className='values col-4 p-3'
-                      name='yearInfo'
+                      name='anoInfo'
                       required-type='number'
-                      id='yearInfo'
+                      id='anoInfo'
                       autoComplete='off'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
 
-                    <label htmlFor="brandInfo" className='col-4'>Marca</label>
+                    <label htmlFor="marcaInfo" className='col-4'>Marca</label>
                     <Field
                       className='values p-3 col-4'
-                      name='brandInfo'
+                      name='marcaInfo'
                       required-type='text'
-                      id='brandInfo'
+                      id='marcaInfo'
                       autoComplete='off'
                     />
 
-                    <label htmlFor="passengersInfo" className='col-4'>Nº de Passageiros(1-2)</label>
+                    <label htmlFor="passageirosInfo" className='col-4'>Nº de Passageiros(1-2)</label>
                     <Field
                       className='values p-3 col-4'
-                      name='passengersInfo'
+                      name='passageirosInfo'
                       required-type='number'
-                      id='passengersInfo'
+                      id='passageirosInfo'
                       autoComplete='off'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
                   </div>
                   <h5>Motocicletas cadastradas:</h5>
                   <div className="box-numbers container d-flex flex-column justify-content-center align-items-center p-3">
-                    <table data-js='motocycle' className="numbers align-items-center justify-content-center">
+                    <table data-js='moto' className="numbers align-items-center justify-content-center">
                       <tr >
                         <th>Modelo</th>
                         <th>Ano de Fabricação</th>
@@ -129,18 +129,18 @@ const Motocyle = () => {
                         <th>Nº de Passageiros</th>
                         <th>Qntd de Rodas</th>
                       </tr>
-                      {!!motocyclesList && motocyclesList.map(({ model, year, brand, passenger, wheels }, idx) => {
+                      {!!listaMotocicletas && listaMotocicletas.map(({ modelo, ano, marca, passageiros, rodas }, idx) => {
                         return (
                           <tbody>
                             <tr key={idx}>
-                              <th>{model}</th>
-                              <th>{year}</th>
-                              <th>{brand}</th>
-                              <th>{passenger}</th>
-                              <th>{wheels}</th>
+                              <th>{modelo}</th>
+                              <th>{ano}</th>
+                              <th>{marca}</th>
+                              <th>{passageiros}</th>
+                              <th>{rodas}</th>
                             </tr>
                           </tbody>
-                        );
+                        )
                       })}
 
                     </table>
@@ -156,7 +156,7 @@ const Motocyle = () => {
       </div>
     </>
 
-  );
-};
+  )
+}
 
-export default Motocyle;
+export default Moto
