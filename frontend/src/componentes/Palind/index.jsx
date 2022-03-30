@@ -74,7 +74,7 @@ export const Palind = () => {
               </div>
               <div className="container d-flex justify-content-center align-items-center gap-3">
                 <button className='button-primary' type="submit">Submeter</button>
-                <input className='button-primary-outline' type='reset' onClick={limpManual} value="Limpar" />
+                <input className='button-primary' type='reset' onClick={limpManual} value="Limpar" />
               </div>
             </Form>
           </Formik>

@@ -18,7 +18,7 @@ function Navbar() {
           <nav className='navbar navbar-expand-lg '>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <a className='navbar-brand playground' href='index.html'>
-                <h3>Tela Inicial - KUKAC</h3>
+                <h3>TESTE - Vaga Node KUKAC</h3>
               </a>
             </Link>
             <button
