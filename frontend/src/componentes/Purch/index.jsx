@@ -104,7 +104,7 @@ export const Compra = () => {
               </div>
               <div className="container d-flex justify-content-center align-items-center gap-3">
                 <button className='button-primary' type="submit">Submeter</button>
-                <button className='button-primary-outline' onClick={limpezaManual} type="reset"> Limpar Campo </button>
+                <button className='button-primary' onClick={limpezaManual} type="reset"> Limpar Campo </button>
               </div>
             </Form>
           </Formik>
