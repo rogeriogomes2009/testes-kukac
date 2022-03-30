@@ -2,20 +2,20 @@ const { palindromoRol } = require("../servicos/PalindServico.js");
 
 class PalindromoController {
   show(request, response) {
-    const { initialValue, finalValue } = request.query;
+    const { valorInicial, valorFinal } = request.query;
 
-    if (+initialValue > +finalValue) {
+    if (+valorInicial > +valorFinal) {
       return response.status(400).json({
         error: "O valor inicial precisa ser < que valor final.",
       });
     }
 
-    if (+initialValue <= 10) {
+    if (+valorInicial <= 10) {
       return response
         .status(400)
         .json({ error: "Valor inicial precisa ser > 10" });
     }
-    return response.json(palindromoRol(+initialValue, +finalValue));
+    return response.json(palindromoRol(+valorInicial, +valorFinal));
   }
 }
 
