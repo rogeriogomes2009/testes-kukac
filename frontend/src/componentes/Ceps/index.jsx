@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { Formik, Form, Field } from 'formik';
-import Cep from './Cep';
-import api from '../../servicos/api';
-import Swal from 'sweetalert2';
+import React, { useState } from 'react'
+import { Formik, Form, Field } from 'formik'
+import Cep from './Cep'
+import api from '../../servicos/api'
+import Swal from 'sweetalert2'
 
 const Ceps = () => {
-  const [ListaDeCeps, setListaDeCeps] = useState([]);
+  const [ListaDeCeps, setListaDeCeps] = useState([])
 
-  const cepsId = ['primeirocep', 'segundocep', 'terceirocep', 'quartocep', 'quintocep'];
+  const cepsId = ['primeirocep', 'segundocep', 'terceirocep', 'quartocep', 'quintocep']
 
-  const inputManual = (value) => {
-    value.target.value = value.target.value.replace(/[^0-9]/g, '');
-  };
+  const inputManual = (valor) => {
+    valor.target.valor = valor.target.valor.replace(/[^0-9]/g, '')
+  }
 
   const submitManual = async ({ cep_1, cep_2, cep_3, cep_4, cep_5 }) => {
-    const ceps = [cep_1, cep_2, cep_3, cep_4, cep_5];
+    const ceps = [cep_1, cep_2, cep_3, cep_4, cep_5]
 
     if (ceps.includes('', "", null, undefined)) {
       Swal.fire({
@@ -22,8 +22,8 @@ const Ceps = () => {
         text: 'Favor informar 5 CEPs',
         icon: 'error',
         confirmButtonText: 'Ok'
-      });
-      return;
+      })
+      return
     }
 
 
@@ -33,8 +33,8 @@ const Ceps = () => {
         text: 'Os CEPs devem conter 8 digitos',
         icon: 'error',
         confirmButtonText: 'Ok'
-      });
-      return;
+      })
+      return
     }
 
     try {
@@ -46,18 +46,18 @@ const Ceps = () => {
           +cep_4,
           +cep_5
         ]
-      });
+      })
 
-      setListaDeCeps(data);
+      setListaDeCeps(data)
     } catch ({ response }) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: `${response.data.error}`,
         confirmButtonText: 'Ok'
-      });
+      })
     }
-  };
+  }
   return (
     <>
       <div className="container background-container mt-5" >
@@ -160,7 +160,7 @@ const Ceps = () => {
                       cidade={localidade}
                       idModal={cepsId[idx]}
                     />
-                  );
+                  )
                 })}
               </div>
             </div>
@@ -168,7 +168,7 @@ const Ceps = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Ceps;
+export default Ceps

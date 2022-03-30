@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Cep = ({ cep, uf, cidade, logradouro, bairro, idModal }) => {
 
@@ -26,7 +26,7 @@ const Cep = ({ cep, uf, cidade, logradouro, bairro, idModal }) => {
       </div>
     </>
 
-  );
-};
+  )
+}
 
-export default Cep;
+export default Cep

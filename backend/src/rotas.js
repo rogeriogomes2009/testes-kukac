@@ -8,8 +8,8 @@ const CepControle = require("./app/controladores/CepControle.js");
 
 const roteador = Roteador();
 
-roteador.get("/palindromo", PalindControle.show);
-roteador.get("/compra", PurchControle.show);
+roteador.get("/palind", PalindControle.show);
+roteador.get("/compras", PurchControle.show);
 roteador.post("/moto", MotoControle.store);
 roteador.get("/moto", MotoControle.show);
 roteador.post("/carro", CarControle.store);

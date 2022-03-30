@@ -7,11 +7,11 @@ import Swal from 'sweetalert2'
 const Carro = () => {
   const [listaCarros, setListCarros] = useState([])
 
-  const handleInput = (valor) => {
+  const inputManual = (valor) => {
     valor.target.valor = valor.target.valor.replace(/[^0-9]/g, '')
   }
 
-  const cleanTable = () => {
+  const limpTabela = () => {
     const carro = document.querySelector('[data-js="carro"]')
     if (!!carro.innerHTML) {
       carro.innerHTML =
@@ -28,7 +28,7 @@ const Carro = () => {
     }
   }
 
-  const firstRender = async () => {
+  const initRender = async () => {
     try {
       const response = await api.get(`/carro`);
       setListCarros(response.data);
@@ -38,11 +38,11 @@ const Carro = () => {
         title: 'Falha...',
         text: 'Impossível carregar dados dos carros sem as informações necessárias',
         confirmButtonText: 'Ok'
-      });
+      })
     }
-  };
+  }
 
-  const handleSubmit = async ({ modeloInfo, anoInfo, marcaInfo, portasInfo }) => {
+  const submitManual = async ({ modeloInfo, anoInfo, marcaInfo, portasInfo }) => {
 
 
     try {
@@ -64,8 +64,8 @@ const Carro = () => {
   };
 
   useEffect(() => {
-    cleanTable();
-    firstRender();
+    limpTabela();
+    initRender();
   }, []);
 
   return (
@@ -78,7 +78,7 @@ const Carro = () => {
               <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <Formik onSubmit={handleSubmit} initialValues={{ modeloInfo: '', anoInfo: '', marcaInfo: '', portasInfo: '' }} >
+              <Formik onSubmit={submitManual} initialValues={{ modeloInfo: '', anoInfo: '', marcaInfo: '', portasInfo: '' }} >
                 <Form className="container d-flex flex-column align-items-center gap-3">
                   <div className=" d-flex flex-wrap align-items-center justify-content-center gap-3">
                     <label className='col-4' htmlFor="modeloInfo">Modelo</label>
@@ -96,7 +96,7 @@ const Carro = () => {
                       required-type='text'
                       id='anoInfo'
                       autoComplete='off'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
                     <label htmlFor="marcaInfo" className='col-4'>Marca</label>
                     <Field
@@ -113,7 +113,7 @@ const Carro = () => {
                       required-type='number'
                       id='portasInfo'
                       autoComplete='off'
-                      onInput={(e) => handleInput(e)}
+                      onInput={(e) => inputManual(e)}
                     />
                   </div>
                   <h5 className='mt-2'>Carros cadastrados:</h5>

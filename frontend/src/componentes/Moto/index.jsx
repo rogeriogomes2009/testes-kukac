@@ -13,9 +13,9 @@ const Moto = () => {
 
 
   const limparTabela = () => {
-    const motocycle = document.querySelector('[data-js="motocycle"]')
-    if (!!motocycle.innerHTML) {
-      motocycle.innerHTML = `
+    const moto = document.querySelector('[data-js="moto"]')
+    if (!!moto.innerHTML) {
+      moto.innerHTML = `
            <thead>
               <tr>
                 <th>Modelo</th>
@@ -33,12 +33,12 @@ const Moto = () => {
 
   const renderInicial = async () => {
     try {
-      const response = await api.get(`/motocycle`)
+      const response = await api.get(`/moto`)
       setListaMotocicletas(response.data)
     } catch (error) {
       Swal.fire({
         icon: 'error',
-        title: 'Oops...',
+        title: 'Falha...',
         text: 'Não foi possível carregar os dados das motos',
         confirmButtonText: 'Ok'
       })
@@ -76,13 +76,13 @@ const Moto = () => {
           <div className="modal-content background-container">
             <div className="modal-header">
               <h5 className="modal-title" id="motocycleModal">Moto</h5>
-              <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div className="modal-body">
               <Formik onSubmit={submitManual} initialValues={{ modeloInfo: '', anoInfo: '', marcaInfo: '', passageirosInfo: '' }} >
                 <Form className="container d-flex flex-column align-items-center gap-3">
                   <div className="d-flex flex-wrap align-items-center justify-content-center gap-3">
-                    <label className='col-4' htmlFor="modelInfo">Modelo</label>
+                    <label className='col-4' htmlFor="modeloInfo">Modelo</label>
                     <Field
                       className='values col-4 p-3'
                       name='modeloInfo'

@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './styles.scss';
-import Svg from '../Svg';
-import { firstSvg, secondSvg } from './svgValues';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import './styles.scss'
+import Svg from '../Svg'
+import { firstSvg, secondSvg } from './svgValues'
 
 function Navbar() {
-  const [svgVal, setSvgVal] = useState(firstSvg);
+  const [svgVal, setSvgVal] = useState(firstSvg)
 
   const troco = () => {
-    setSvgVal(svgVal === firstSvg ? secondSvg : firstSvg);
-  };
+    setSvgVal(svgVal === firstSvg ? secondSvg : firstSvg)
+  }
 
   return (
     <>
@@ -43,29 +43,29 @@ function Navbar() {
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#sobre'
+                      href='#palind'
                     >
                       Palíndromo
                     </a>
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link to='/purchase' style={{ textDecoration: 'none' }}>
+                  <Link to='/compras' style={{ textDecoration: 'none' }}>
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#tecnologias'
+                      href='#compras'
                     >
                       Compras
                     </a>
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link to='/veiculo' style={{ textDecoration: 'none' }}>
+                  <Link to='/veiculos' style={{ textDecoration: 'none' }}>
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#projetos'
+                      href='#veiculos'
                     >
                       Veículos
                     </a>
@@ -76,7 +76,7 @@ function Navbar() {
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#contato'
+                      href='#ceps'
                     >
                       CEP's
                     </a>
@@ -88,7 +88,7 @@ function Navbar() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
