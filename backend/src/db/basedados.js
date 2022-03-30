@@ -1,0 +1,4 @@
+exports.DATABASE = {
+  carros: [],
+  motos: []
+};
