@@ -23,4 +23,4 @@ const trocoCompra = (valorCompra, pagamento) => {
 
 
 
-module.exports = trocoCompra;
+export default trocoCompra;

@@ -1,4 +1,4 @@
-const trocoCompra = require('../../src/app/servicos/PurshServico');
+const trocoCompra = require('../../src/app/servicos/PurshServico').default;
 
 describe("Testando serviços de compra", () => {
   it("Deve retornar troco = 62, notas de 100 = 0, notas de 10 = 6 e notas de 1 = 2", () => {
