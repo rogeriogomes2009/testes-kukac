@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500;700&display=swap');
 :root {
-  --primary: #8257e5;
+  --primary: #ffffff;
   --primary-dark: #981ee4;
-  --background: #121214;
-  --background-box: #1c1c1e;
-  --support: #737380;
+  --background: #979797;
+  --background-box: #4c4c4d;
+  --support: #f0ec16;
   --black: #09090a;
-  --text: #a8a8b3;
-  --btn-primary: #9466ff;
+  --text: #f8f7a7;
+  --btn-primary: #ffffff;
   --btn-hover: #6833e4;
   --white: #fff;
-  --border: #6833e4;
+  --border: #706686;
 }
 
 body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+  width: 12px;
 }
 
 body::-webkit-scrollbar-track {
@@ -31,7 +31,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Arial', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
@@ -116,7 +116,7 @@ h6 {
   font-weight: 400;
 }
 
-// inputs values, box and box numbers
+
 
 .values {
   height: 25px;

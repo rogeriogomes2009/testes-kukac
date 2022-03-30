@@ -1,17 +1,16 @@
-const palindromo = (number) => {
-  const revNumber = number.toString().split('').reverse().join('');
-  return revNumber == number
-}
+const palind = (number) => {
+  const revNumber = number.toString().split("").reverse().join("");
+  return revNumber == number;
+};
 
 const palindromoRol = (inicial, final) => {
-  const valorRol = []
+  const valorRol = [];
   for (let index = inicial; index <= final; index += 1) {
-    if (palindromo(index)) {
-      valorRol.push(index)
+    if (palind(index)) {
+      valorRol.push(index);
     }
   }
-  return valorRol
-}
+  return valorRol;
+};
 
-
-module.exports = { palindromoRol, palindromo };
+module.exports = { palindromoRol, palind };

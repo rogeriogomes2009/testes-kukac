@@ -1,4 +1,4 @@
-const { Roteador } = require("express");
+const { Router } = require("express");
 
 const PalindControle = require("./app/controladores/PalindControle.js");
 const PurchControle = require("./app/controladores/PurshControle.js");
@@ -6,7 +6,7 @@ const MotoControle = require("./app/controladores/MotoControle.js");
 const CarControle = require("./app/controladores/CarControle.js");
 const CepControle = require("./app/controladores/CepControle.js");
 
-const roteador = Roteador();
+const roteador = Router();
 
 roteador.get("/palind", PalindControle.show);
 roteador.get("/compras", PurchControle.show);

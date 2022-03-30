@@ -47,7 +47,7 @@ export const Palind = () => {
         <div>
           <Formik onSubmit={submitManual} initialValues={{ valorInicial: '', valorFinal: '' }} >
             <Form className="container d-flex flex-column align-items-center gap-3">
-              <p>Digite 2 números para que o app verifique se há números palíndromos!</p>
+              <p>Digite os valores INICIAL e FINAL para que o app verifique se há números palíndromos!</p>
               <div className="container d-flex flex-wrap align-items-center justify-content-center gap-3">
                 <label className="" htmlFor="valorInicial">Valor Inicial</label>
                 <Field
