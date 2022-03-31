@@ -1,6 +1,6 @@
 import React from 'react'
-import Car from '../Car'
-import Moto from '../Moto'
+import Car from '../Car/index.jsx'
+import Motocycle from '../Motocycle/index.jsx'
 
 const Vehicles = () => {
 
@@ -21,7 +21,7 @@ const Vehicles = () => {
               </button>
             </div>
             <div>
-              <Moto />
+              <Motocycle />
               <Car />
             </div>
           </div>

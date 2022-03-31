@@ -4,7 +4,7 @@ import api from '../../services/api'
 import './styles.scss'
 import Swal from 'sweetalert2'
 
-const Moto = () => {
+const Motocycle = () => {
   const [motocycleList, setListMotocycleList] = useState([])
 
   const handleInput = (value) => {
@@ -13,9 +13,9 @@ const Moto = () => {
 
 
   const tableClean = () => {
-    const moto = document.querySelector('[data-js="moto"]')
-    if (!!moto.innerHTML) {
-      moto.innerHTML = `
+    const motocycle = document.querySelector('[data-js="motocycle"]')
+    if (!!motocycle.innerHTML) {
+      motocycle.innerHTML = `
            <thead>
               <tr>
                 <th>Modelo</th>
@@ -33,7 +33,7 @@ const Moto = () => {
 
   const initialRender = async () => {
     try {
-      const response = await api.get(`/moto`)
+      const response = await api.get(`/motocycle`)
       setListMotocycleList(response.data)
     } catch (error) {
       Swal.fire({
@@ -47,7 +47,7 @@ const Moto = () => {
 
   const handleSubmmit = async ({ modeloInfo, anoInfo, marcaInfo, passageirosInfo }) => {
     try {
-      const response = await api.post(`/moto`, {
+      const response = await api.post(`/motocycle`, {
         modelo: modeloInfo,
         ano: +anoInfo,
         marca: marcaInfo,
@@ -159,4 +159,4 @@ const Moto = () => {
   )
 }
 
-export default Moto
+export default Motocycle
