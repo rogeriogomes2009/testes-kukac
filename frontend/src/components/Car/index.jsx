@@ -125,14 +125,14 @@ const Car = () => {
                         <th>Marca</th>
                         <th>Qntd de Portas</th>
                       </tr>
-                      {!!carList && carList.map((carro, idx) => {
+                      {!!carList && carList.map((car, idx) => {
                         return (
                           <tbody>
                             <tr key={idx}>
-                              <th>{carro.modelo}</th>
-                              <th>{carro.ano}</th>
-                              <th>{carro.marca}</th>
-                              <th>{carro.portas}</th>
+                              <th>{car.modelo}</th>
+                              <th>{car.ano}</th>
+                              <th>{car.marca}</th>
+                              <th>{car.portas}</th>
                             </tr>
 
                           </tbody>
