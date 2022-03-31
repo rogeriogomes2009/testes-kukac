@@ -5,7 +5,7 @@ import './styles.scss'
 import Swal from 'sweetalert2'
 
 const Motocycle = () => {
-  const [motocyclesList, setMotocycleList] = useState([])
+  const [motocyclesList, setMotocyclesList] = useState([])
 
   const handleInput = (value) => {
     value.target.value = value.target.value.replace(/[^0-9]/g, '')
@@ -34,7 +34,7 @@ const Motocycle = () => {
   const initialRender = async () => {
     try {
       const response = await api.get(`/moto`)
-      setMotocycleList(response.data)
+      setMotocyclesList(response.data)
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -53,7 +53,7 @@ const Motocycle = () => {
         marca: marcaInfo,
         passageiros: +passageirosInfo
       });
-      setMotocycleList(response.data)
+      setMotocyclesList(response.data)
     } catch ({ response }) {
       Swal.fire({
         icon: 'error',

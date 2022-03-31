@@ -78,7 +78,7 @@ function Navbar() {
                       aria-current='page'
                       href='#ceps'
                     >
-                      CEP's
+                      CEP'S
                     </a>
                   </Link>
                 </li>
