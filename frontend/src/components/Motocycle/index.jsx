@@ -5,7 +5,7 @@ import './styles.scss'
 import Swal from 'sweetalert2'
 
 const Motocycle = () => {
-  const [motocycleList, setListMotocycleList] = useState([])
+  const [motocyclesList, setMotocycleList] = useState([])
 
   const handleInput = (value) => {
     value.target.value = value.target.value.replace(/[^0-9]/g, '')
@@ -34,7 +34,7 @@ const Motocycle = () => {
   const initialRender = async () => {
     try {
       const response = await api.get(`/motocycle`)
-      setListMotocycleList(response.data)
+      setMotocycleList(response.data)
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -53,7 +53,7 @@ const Motocycle = () => {
         marca: marcaInfo,
         passageiros: +passageirosInfo
       });
-      setListMotocycleList(response.data)
+      setMotocycleList(response.data)
     } catch ({ response }) {
       Swal.fire({
         icon: 'error',
@@ -121,7 +121,7 @@ const Motocycle = () => {
                   </div>
                   <h5>Motocicletas cadastradas:</h5>
                   <div className="box-numbers container d-flex flex-column justify-content-center align-items-center p-3">
-                    <table data-js='moto' className="numbers align-items-center justify-content-center">
+                    <table data-js='motocycle' className="numbers align-items-center justify-content-center">
                       <tr >
                         <th>Modelo</th>
                         <th>Ano de Fabricação</th>
@@ -129,7 +129,7 @@ const Motocycle = () => {
                         <th>Nº de Passageiros</th>
                         <th>Qntd de Rodas</th>
                       </tr>
-                      {!!motocycleList && motocycleList.map(({ modelo, ano, marca, passageiros, rodas }, idx) => {
+                      {!!motocyclesList && motocyclesList.map(({ modelo, ano, marca, passageiros, rodas }, idx) => {
                         return (
                           <tbody>
                             <tr key={idx}>

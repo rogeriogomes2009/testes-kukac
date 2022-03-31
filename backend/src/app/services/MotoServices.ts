@@ -1,6 +1,6 @@
 import { Vehicle } from "../interface/VehicleRepos";
 
-class Moto implements Vehicle {
+class Motocycle implements Vehicle {
   modelo: string;
   ano: number;
   marca: string;
@@ -16,4 +16,4 @@ class Moto implements Vehicle {
   }
 }
 
-export { Moto };
+export { Motocycle };
