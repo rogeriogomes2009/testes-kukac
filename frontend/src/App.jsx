@@ -1,9 +1,9 @@
-import ListaRotas from './rotas'
+import RoutesList from './routes'
 
 const App = () => {
   return (
     <>
-      <ListaRotas />
+      <RoutesList />
     </>
   );
 };
