@@ -1,0 +1,16 @@
+.buttonToTop {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: var(--primary);
+  transition: color 0.3s ease-in-out;
+  &:hover,
+  &:active {
+    color: var(--white);
+  }
+}
