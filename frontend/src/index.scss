@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500;700&display=swap');
+:root {
+  --primary: #ffffff;
+  --primary-dark: #981ee4;
+  --background: #eee4e4;
+  --background-box: #4c4c4d;
+  --support: #30302c;
+  --black: #09090a;
+  --text: #e9a913;
+  --btn-primary: #ffffff;
+  --btn-hover: #3a393d;
+  --white: rgb(44, 41, 41);
+  --border: #706686;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 20px;
+  border: 3px solid var(--primary);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  background-image: url(../public/back.png);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.background-container{
+  background-color: var(--background-box);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.button {
+  text-transform: lowercase;
+  font-weight: 500;
+  padding: 0.375rem 1.4rem;
+}
+
+.button-primary {
+  background-color: var(--btn-primary);
+  border-color: var(--btn-primary);
+
+  &:hover,
+  &:active {
+    background-color: var(--btn-hover);
+    border-color: var(--btn-hover);
+  }
+}
+
+.button-primary-outline {
+  border-color: var(--btn-primary);
+  color: var(--btn-primary);
+  background-color: var(--background);
+
+  &:hover,
+  &:active {
+    background-color: var(--btn-hover);
+    border-color: var(--btn-hover);
+    color: var(--black);
+  }
+}
+
+.modal-backdrop {
+  display:none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--support);
+  font-weight: 400;
+}
+
+
+
+.values {
+  height: 25px;
+  padding: 2px;
+  margin: 5px;
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  background-color: var(--background);
+  color: var(--white);
+
+  &:focus{
+      outline: none;
+      border: 3px solid var(--primary);
+  }
+}
+
+.box-numbers {
+  min-height: 25px;
+  height: auto;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--background-box);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: ceter;
+
+  .numbers {
+    justify-self: center;
+    align-self: center;
+  }
+}
