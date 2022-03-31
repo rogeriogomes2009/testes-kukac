@@ -50,22 +50,22 @@ function Navbar() {
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link to='/compras' style={{ textDecoration: 'none' }}>
+                  <Link to='/purchase' style={{ textDecoration: 'none' }}>
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#compras'
+                      href='#purchase'
                     >
                       Compras
                     </a>
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link to='/veiculos' style={{ textDecoration: 'none' }}>
+                  <Link to='/vehicles' style={{ textDecoration: 'none' }}>
                     <a
                       className='nav-link active'
                       aria-current='page'
-                      href='#veiculos'
+                      href='#vehicles'
                     >
                       Veículos
                     </a>
