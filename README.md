@@ -60,37 +60,37 @@ _________
 
 As seguintes ferramentas foram usadas na construção do Front-end:
 
- - [HTML5]
- - [ReactJS]
- - [Axios]
+ - **HTML5**
+ - **ReactJS**
+ - **Axios**
 
- - [Formik]
- - [Javascript]
- - [editorconfig]
+ - **Formik**
+ - **Javascript**
+ - **editorconfig**
  
- - [yarn]
- - [sweetalert2]
- - [Sass]
+ - **yarn**
+ - **sweetalert2**
+ - **Sass**
 
 _________
 
 Ferramentas para desenvolvimento do Back-end:
  
-- [yarn]
-- [editorconfig]
+- **yarn**
+- **editorconfig**
 
-- [Express]
-- [Nodemon]
-- [cors]
-- [express-async-erros]
-- [Jester]
-- [JavaScript]
-- [TypeScript]
+- **Express**
+- **Nodemon**
+- **cors**
+- **express-async-erros**
+- **Jester**
+- **JavaScript**
+- **TypeScript**
 
-- [Postman]
+- **Postman**
 
 
-- Programado no [Visual Studio Code].
+- Programado no **Visual Studio Code**.
 
 _________
 
@@ -138,21 +138,21 @@ _________
 Desafio realizado por ***Rogério Gomes - rogerio.gomes2009@gmail.com***
 
 
-[Axios]: https://axios-http.com/docs/intro
-[cors]: https://www.npmjs.com/package/cors
-[editorconfig]: https://editorconfig.org/
-[Express]: https://expressjs.com/
-[express-async-erros]: https://www.npmjs.com/package/express-async-errors
-[formik]: https://formik.org/
-[HTML5]: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
-[JavaScript]: https://www.javascript.com/  
-[Jester]: https://jestjs.io/
-[Nodemon]: https://www.npmjs.com/package/nodemon
-[Postman]: https://www.postman.com/
-[ReactJS]: https://reactjs.org/
-[Sass]: https://sass-lang.com/ 
-[sweetalert2]: https://sweetalert2.github.io/
-[TypeScript]: https://www.typescriptlang.org/
-[yarn]: https://yarnpkg.com/
+**Axios**: https://axios-http.com/docs/intro
+**cors**: https://www.npmjs.com/package/cors
+**editorconfig**: https://editorconfig.org/
+**Express**: https://expressjs.com/
+**express-async-erros**: https://www.npmjs.com/package/express-async-errors
+**formik**: https://formik.org/
+**HTML5**: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+**JavaScript**: https://www.javascript.com/  
+**Jester**: https://jestjs.io/
+**Nodemon**: https://www.npmjs.com/package/nodemon
+**Postman**: https://www.postman.com/
+**ReactJS**: https://reactjs.org/
+**Sass**: https://sass-lang.com/ 
+**sweetalert2**: https://sweetalert2.github.io/
+**TypeScript**: https://www.typescriptlang.org/
+**yarn**: https://yarnpkg.com/
 
-[Visual Studio Code]: https://code.visualstudio.com/ 
+**Visual Studio Code**: https://code.visualstudio.com/ 
