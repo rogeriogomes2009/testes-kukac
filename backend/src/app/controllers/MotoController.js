@@ -29,7 +29,7 @@ class MotoController {
         .json({ error: "Favor definir se 1 ou 2 passageiros" });
     }
 
-    DATABASE.motos.push(new Moto(modelo, ano, marca, passageiros));
+    DATABASE.motocycles.push(new Moto(modelo, ano, marca, passageiros));
     return response.json(DATABASE.motos);
   }
   show(request, response) {
