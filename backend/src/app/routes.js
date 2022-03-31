@@ -10,10 +10,10 @@ const routes = Router();
 
 routes.get("/palind", PalindController.show);
 routes.get("/purchase", PurchController.show);
-routes.post("/motocycle", MotoController.store);
-routes.get("/motocycle", MotoController.show);
-routes.post("/car", CarController.store);
-routes.get("/car", CarController.show);
+routes.post("/moto", MotoController.store);
+routes.get("/moto", MotoController.show);
+routes.post("/carro", CarController.store);
+routes.get("/carro", CarController.show);
 routes.post("/ceps", CepController.show);
 
 module.exports = routes;

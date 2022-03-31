@@ -30,7 +30,7 @@ const Car = () => {
 
   const initRender = async () => {
     try {
-      const response = await api.get(`/car`);
+      const response = await api.get(`/carro`);
       setCarsList(response.data);
     } catch (error) {
       Swal.fire({
@@ -46,7 +46,7 @@ const Car = () => {
 
 
     try {
-      const response = await api.post(`/car`, {
+      const response = await api.post(`/carro`, {
         modelo: modeloInfo,
         ano: +anoInfo,
         marca: marcaInfo,

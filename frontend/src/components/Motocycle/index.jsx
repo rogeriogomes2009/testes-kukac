@@ -33,7 +33,7 @@ const Motocycle = () => {
 
   const initialRender = async () => {
     try {
-      const response = await api.get(`/motocycle`)
+      const response = await api.get(`/moto`)
       setMotocycleList(response.data)
     } catch (error) {
       Swal.fire({
@@ -47,7 +47,7 @@ const Motocycle = () => {
 
   const handleSubmmit = async ({ modeloInfo, anoInfo, marcaInfo, passageirosInfo }) => {
     try {
-      const response = await api.post(`/motocycle`, {
+      const response = await api.post(`/moto`, {
         modelo: modeloInfo,
         ano: +anoInfo,
         marca: marcaInfo,

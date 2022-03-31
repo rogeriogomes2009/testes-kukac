@@ -30,10 +30,10 @@ class MotoController {
     }
 
     DATABASE.motocycles.push(new Moto(modelo, ano, marca, passageiros));
-    return response.json(DATABASE.motos);
+    return response.json(DATABASE.motocycles);
   }
   show(request, response) {
-    return response.json(DATABASE.motos);
+    return response.json(DATABASE.motocycles);
   }
 }
 
