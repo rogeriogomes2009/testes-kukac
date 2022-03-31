@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Field, Formik, Form } from 'formik'
-import api from '../../servicos/api'
+import api from '../../services/api'
 import './styles.scss'
 import Swal from 'sweetalert2'
 
@@ -46,7 +46,7 @@ const Car = () => {
 
 
     try {
-      const response = await api.post(`/carro`, {
+      const response = await api.post(`/car`, {
         modelo: modeloInfo,
         ano: +anoInfo,
         marca: marcaInfo,
