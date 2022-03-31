@@ -1,6 +1,6 @@
 import React from 'react'
-import Car from '../Car/index'
-import Motocycle from '../Motocycle/index'
+import Car from '../Car'
+import Motocycle from '../Motocycle'
 
 const Vehicles = () => {
 
